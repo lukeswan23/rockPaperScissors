@@ -28,7 +28,14 @@ const score = condition => {
   } else {
     scoreKeep = 0;
   }
-  scoreEl.textContent = `Your streak is: ${scoreKeep}`;
+  if (scoreKeep > 2) {
+    let streakText = document.createElement("h3");
+    streakText.innerText = "ALL SKILL BABY!";
+    scoreEl.textContent = `Your streak is: ${scoreKeep}`;
+    scoreEl.appendChild(streakText);
+  } else {
+    scoreEl.textContent = `Your streak is: ${scoreKeep}`;
+  }
 };
 
 const gameLogic = (moveOne, moveTwo) => {
