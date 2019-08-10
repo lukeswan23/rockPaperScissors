@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: burlywood;
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 5px;
+}
+h1 {
+  text-align: center;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: blanchedalmond;
+  border-radius: 5px;
+}
+.rps__game {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.hiddenImg {
+  visibility: hidden;
+}
+
+.rps__game > img {
+  max-width: 30%;
+  max-height: 30%;
+  border-radius: 5px;
+}
+#cpu {
+  transform: scaleX(-1);
+}
+.rps__displayMove {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 0.5rem;
+  padding-bottom: 1rem;
+}
+.rps__displayMove > img {
+  max-width: 10%;
+  max-height: 10%;
+  border-radius: 5px;
+}
