@@ -34,9 +34,7 @@ h1 {
   max-height: 30%;
   border-radius: 5px;
 }
-#cpu {
-  transform: scaleX(-1);
-}
+
 .rps__displayMove {
   display: flex;
   justify-content: space-evenly;
@@ -47,4 +45,9 @@ h1 {
   max-width: 10%;
   max-height: 10%;
   border-radius: 5px;
+}
+
+.handAnimate {
+  transition: 1s;
+  transform: rotate(1080deg);
 }

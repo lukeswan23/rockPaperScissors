@@ -2,13 +2,16 @@ const gameEls = document.querySelector(".rps__game");
 const displayMovesEls = document.querySelector(".rps__displayMove");
 const chooseMoveEls = document.querySelector(".rps__chooseMove");
 let resultText = document.querySelector(".rps__game__result").childNodes[1];
+const playerImg = gameEls.childNodes[1];
+const cpuImg = gameEls.childNodes[3];
 
 //listener for the img, passes on the alt text which is used to identify the move chosen
 const chooseMove = () => {
   displayMovesEls.addEventListener("click", function(event) {
     if (event.target.tagName == "IMG") {
-      console.log(gameEls.childNodes);
+      //console.log(gameEls.childNodes);
       let userHand = event.target.alt;
+      animateHands();
 
       game(playerMove(userHand), cpuMove());
     }
@@ -40,9 +43,8 @@ const gameLogic = (moveOne, moveTwo) => {
   }
 };
 
+//using childNodes to access the image element over ID's/classes for practice with DOM
 const game = (player, cpu) => {
-  const playerImg = gameEls.childNodes[1];
-  const cpuImg = gameEls.childNodes[3];
   if (playerImg.classList.contains("hiddenImg")) {
     playerImg.classList.remove("hiddenImg");
     cpuImg.classList.remove("hiddenImg");
@@ -51,7 +53,7 @@ const game = (player, cpu) => {
   gameLogic(player, cpu);
 
   playerImg.src = `img/${player}.png`;
-  cpuImg.src = `img/${cpu}.png`;
+  cpuImg.src = `img/${cpu}Cpu.png`;
 };
 
 const cpuMove = () => {
@@ -78,6 +80,15 @@ const playerMove = moveId => {
   } else {
     return "rock";
   }
+};
+
+let animateHands = () => {
+  cpuImg.classList.toggle("handAnimate");
+  playerImg.classList.toggle("handAnimate");
+  setTimeout(function() {
+    cpuImg.classList.remove("handAnimate");
+    playerImg.classList.remove("handAnimate");
+  }, 400);
 };
 
 chooseMove();
