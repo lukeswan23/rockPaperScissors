@@ -13,7 +13,7 @@ h1 {
   padding: 1rem;
 }
 
-.container {
+.main {
   max-width: 1200px;
   margin: 0 auto;
   background: blanchedalmond;
@@ -21,7 +21,7 @@ h1 {
 }
 .rps__game {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 1rem;
 }
 
@@ -46,8 +46,16 @@ h1 {
   max-height: 10%;
   border-radius: 5px;
 }
+.rps__displayMove > img:hover {
+  opacity: 0.8;
+}
 
 .handAnimate {
-  transition: 1s;
-  transform: rotate(1080deg);
+  transition: 0.5s;
+  transform: rotate(360deg);
+}
+
+.score {
+  text-align: center;
+  font-size: 2rem;
 }
